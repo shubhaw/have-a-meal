@@ -1,0 +1,9 @@
+.buttonGroup {
+    height: fit-content !important;
+}
+
+.button {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-shadow: none !important;
+}

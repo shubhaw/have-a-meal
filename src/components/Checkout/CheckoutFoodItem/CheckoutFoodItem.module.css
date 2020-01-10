@@ -1,0 +1,13 @@
+.CheckoutFoodItem {
+    display: grid;
+    margin: 15px 0;
+    grid-template-columns: 2fr auto 65px;
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.price {
+    justify-self: end;
+}

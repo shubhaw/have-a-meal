@@ -1,0 +1,48 @@
+.Card {
+    display: grid;
+    padding: 10px;
+    box-sizing: border-box;
+    grid-template-columns: 80px 1fr 1fr;
+    grid-template-areas: 
+        "image heading heading"
+        "image description description"
+        "image amount variable";
+    gap: 5px 5px;
+    justify-items: start;
+    align-items: center;
+}
+
+.image {
+    grid-area: image;
+    border-radius: 5px;
+    align-self: stretch;
+}
+
+.heading {
+    grid-area: heading;
+    line-height: normal !important;
+    /* background-color: burlywood; */
+}
+
+.description {
+    grid-area: description;
+    line-height: normal !important;
+    font-size: small !important;
+    font-style: italic;
+    /* background-color: cadetblue; */
+}
+
+.amount {
+    grid-area: amount;
+    line-height: normal !important;
+    font-size: x-small !important;
+    /* background-color: chartreuse; */
+}
+
+.variable {
+    grid-area: variable;
+    line-height: normal !important;
+    font-size: x-small !important;
+    justify-self: end;
+    /* background-color: darkkhaki; */
+}
