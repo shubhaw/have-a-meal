@@ -4,7 +4,7 @@ import axios from '../../axios-config';
 
 import burgerImage from '../../assets/images/burger.jpg';
 
-const Restaurants = () => {
+const Restaurants = (props) => {
     //#region hardcoded restaurant list
     // const restaurantList = [
     //     {
@@ -36,7 +36,7 @@ const Restaurants = () => {
     useEffect(() => {
         axios.get('getRestaurants')
             .then(response => {
-                // console.log(response)
+                console.log(response)
                 const restaurants = response.data.map(restaurant => {
                     return {
                         ...restaurant,
@@ -46,14 +46,24 @@ const Restaurants = () => {
                 setRestaurantList(restaurants);
             })
             .catch(err => console.error(err));
-    }, [])
+    }, []);
 
+    const restaurantClickHandler = (id) => {
+        console.log(props)
+        console.log(id)
+
+        props.history.push({
+            pathname: '/restaurant/'+id
+        });
+    }
+    
     return (
         <React.Fragment>
             {
                 restaurantList.map((restaurant, index) => (
                     <Restaurant key={index}
                         {...restaurant}
+                        onClick={() => restaurantClickHandler(restaurant.id)}
                     />
                 ))
             }

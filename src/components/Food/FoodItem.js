@@ -11,6 +11,8 @@ const FoodItem = props => {
             description={props.description}
             price={props.price}
             quantity={props.quantity}
+            onIncrementClick={props.onIncrementClick}
+            onDecrementClick={props.onDecrementClick}
         />
     )
 }

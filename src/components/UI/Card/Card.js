@@ -6,15 +6,20 @@ import GroupButton from '../Button/GroupButton';
 // import burgerImage from '../../../assets/images/burger.jpg';
 
 const Card = (props) => {
-    let button = <Button style={{width: '118px'}} size="small" variant="outlined" color="primary">Add</Button>;
+    let button = <Button style={{width: '118px'}} size="small" variant="outlined" color="primary" onClick={props.onIncrementClick}>
+                    Add
+                </Button>;
 
     if (props.quantity && props.quantity > 0) {
-        button = <GroupButton quantity={props.quantity} />
+        button = <GroupButton 
+                    quantity={props.quantity} 
+                    onDecrementClick={props.onDecrementClick} 
+                    onIncrementClick={props.onIncrementClick} />
     }
 
 
     return (
-        <Paper square={props.type !== 'restaurant'} className={styleClasses.Card} style={props.style}>
+        <Paper square={props.type !== 'restaurant'} className={styleClasses.Card} style={props.style} onClick={props.onClick}>
             <img src={props.image} width="80" height="80" alt={props.alt} className={styleClasses.image}></img>
             <Typography variant="h6" className={styleClasses.heading}>{props.title}</Typography>
             <Typography variant="body1" className={styleClasses.description}>{props.description}</Typography>

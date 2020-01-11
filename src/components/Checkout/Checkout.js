@@ -32,7 +32,7 @@ const Checkout = props => {
             <TextField label="Note for restaurant" size="small" fullWidth />
             <br /><br />
             <BillDetails
-                foodItemTotalPrice="1232.34"
+                foodItemTotalPrice="12"
                 deliveryFee="0"
                 packingCharges="10"
                 taxes="19.28"
